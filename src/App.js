@@ -5,15 +5,8 @@ import FullMovie from "./movie/FullMovie";
 import TheaterList from "./theaters/TheaterList";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
-  accessToken: '1140d7187a1f40ef8851cf05d679d74d',
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-})
-
-// record a generic message and send it to Rollbar
+import { Client } from 'rollbar-react-native'
+const rollbar = new Client('29853e81cef944b2addfdec3c59e0f31')
 rollbar.log('Hello world!')
 
 function App() {
